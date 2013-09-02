@@ -15,6 +15,8 @@
 
   <faces:resources />
   
+  <mvc:resources location="/" mapping="/resources/**" />
+  
   <webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices" base-path="/WEB-INF/flows">
 		<webflow:flow-location path="/catalogos/persona/principal.xml" />
 	</webflow:flow-registry>
