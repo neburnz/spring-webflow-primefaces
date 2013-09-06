@@ -4,6 +4,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
         http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
         
-  <view-state id="principal" view="catalogos/persona/principal" />
+  <view-state id="principal" view="catalogos/persona/principal">
+    <transition on="next" to="edicion" />
+  </view-state>
         
+  <view-state id="edicion" view="catalogos/persona/edicion">
+    <transition on="back" to="principal" />
+  </view-state>
+  
 </flow>

@@ -21,12 +21,15 @@
 		<webflow:flow-location path="/catalogos/persona/principal.xml" />
 	</webflow:flow-registry>
 
-  <webflow:flow-builder-services id="flowBuilderServices" view-factory-creator="mvcViewFactoryCreator" />
+  <faces:flow-builder-services id="flowBuilderServices" view-factory-creator="mvcViewFactoryCreator" />
 	
   <webflow:flow-executor id="flowExecutor" flow-registry="flowRegistry">
 		<webflow:flow-execution-listeners>
 			<webflow:listener ref="flowFacesContextLifecycleListener" />
 		</webflow:flow-execution-listeners>
+		<webflow:flow-execution-attributes>
+      <webflow:redirect-in-same-state value="false"/>
+    </webflow:flow-execution-attributes>
 	</webflow:flow-executor>
 	
 	<bean id="mvcViewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
